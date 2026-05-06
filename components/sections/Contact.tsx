@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { MapPin, Phone, Mail, Send, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
-import GlassCard from '../ui/GlassCard';
 
 const EASE = [0.25, 0.46, 0.45, 0.94] as const;
 
@@ -80,7 +79,7 @@ export default function Contact() {
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, ease: EASE }}
         >
-          <GlassCard className="h-full p-8 flex flex-col justify-between">
+          <div className="glass-panel h-full p-8 flex flex-col justify-between">
             <div>
               <h3 className="font-syne font-bold text-2xl text-white mb-8">Contact Information</h3>
               
@@ -125,7 +124,7 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </GlassCard>
+          </div>
         </motion.div>
 
         {/* Right: Contact Form */}
@@ -136,7 +135,7 @@ export default function Contact() {
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, delay: 0.1, ease: EASE }}
         >
-          <GlassCard className="p-8 sm:p-10">
+          <div className="glass-panel p-8 sm:p-10">
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -205,7 +204,7 @@ export default function Contact() {
               </button>
 
             </form>
-          </GlassCard>
+          </div>
         </motion.div>
 
       </div>
@@ -220,7 +219,7 @@ export default function Contact() {
               transition={{ duration: 0.3, ease: EASE }}
               className="w-full max-w-lg"
             >
-              <GlassCard className="p-8 sm:p-10 relative overflow-hidden">
+              <div className="glass-panel p-8 sm:p-10 relative overflow-hidden">
                 <button 
                   onClick={() => setStatus('idle')}
                   className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
@@ -274,7 +273,7 @@ export default function Contact() {
                     </div>
                   </div>
                 )}
-              </GlassCard>
+              </div>
             </motion.div>
           </div>
         )}

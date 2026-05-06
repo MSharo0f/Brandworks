@@ -11,7 +11,7 @@ const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
     return (
       <div
         ref={ref}
-        className={`glass-card ${hoverable ? 'glass-card-hover' : ''} ${className}`}
+        className={`glass-card ${hoverable ? 'glass-hover' : ''} ${className}`}
         {...props}
       >
         {children}

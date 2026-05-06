@@ -145,7 +145,7 @@ function ProjectCard({ project }: { project: typeof projects[number] }) {
         style={{ backgroundColor: project.accent }}
       />
 
-      <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+      <div className="glass-overlay absolute bottom-0 left-0 right-0 p-5 sm:p-7 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
         <div className="flex items-center gap-2 mb-3 flex-wrap">
           <span className={`px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest rounded-full ${tagColors[project.tag] ?? 'bg-white/20 text-white'}`}>
             {project.tag}

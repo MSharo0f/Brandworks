@@ -216,14 +216,7 @@ export default function Navbar() {
           {/* RIGHT — Controls */}
           <div className="flex items-center gap-4">
             {/* EN / AR Language Toggle */}
-            <div style={{
-              display: 'flex',
-              border: '1px solid rgba(255,255,255,0.15)',
-              borderRadius: '8px',
-              overflow: 'hidden',
-              backdropFilter: 'blur(8px)',
-              background: 'rgba(255,255,255,0.06)',
-            }}>
+            <div className="glass-pill" style={{ display: 'inline-flex', overflow: 'hidden', padding: 0 }}>
               {['EN', 'AR'].map(lang => (
                 <button
                   key={lang}
@@ -250,6 +243,7 @@ export default function Navbar() {
             <div className="hidden md:block">
               <a
                 href="#contact"
+                className="glass-button"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -260,14 +254,9 @@ export default function Navbar() {
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
                   color: 'white',
-                  border: '1px solid rgba(244,37,37,0.55)',
-                  borderRadius: '8px',
                   padding: '8px 18px',
-                  background: 'rgba(244,37,37,0.08)',
-                  transition: 'background 0.25s, border-color 0.25s',
                   textDecoration: 'none',
                 }}
-                className="hover:bg-[rgba(244,37,37,0.22)] hover:border-[rgba(244,37,37,0.90)] group"
               >
                 <HoverSplitText
                   text="Get a Quote"
@@ -388,13 +377,7 @@ export default function Navbar() {
               {/* Bottom Elements */}
               <div className="w-full flex flex-col items-center gap-8">
                 {/* EN / AR Language Toggle */}
-                <div style={{
-                  display: 'flex',
-                  border: '1px solid rgba(255,255,255,0.15)',
-                  borderRadius: '8px',
-                  overflow: 'hidden',
-                  background: 'rgba(255,255,255,0.06)',
-                }}>
+                <div className="glass-pill" style={{ display: 'inline-flex', overflow: 'hidden', padding: 0 }}>
                   {['EN', 'AR'].map(lang => (
                     <button
                       key={lang}

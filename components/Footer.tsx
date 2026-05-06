@@ -303,19 +303,19 @@ export default function Footer() {
               }}>Follow Us</div>
               <div style={{
                 display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px',
-              }} className="hover:text-[#F42525] hover:translate-x-[3px] transition-all duration-200 text-[rgba(255,255,255,0.65)]">
+              }} className="glass-pill glass-hover hover:text-[#F42525] transition-all duration-200 text-[rgba(255,255,255,0.65)] px-4 py-2">
                 <InstagramIcon />
                 <HoverSplitText text="Instagram" href="https://instagram.com/brandworkskw" staggerDelay={0.012} style={{ fontFamily: 'var(--font-dm-sans), sans-serif', fontSize: '14px', color: 'inherit' }} />
               </div>
               <div style={{
                 display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px',
-              }} className="hover:text-[#2196E8] hover:translate-x-[3px] transition-all duration-200 text-[rgba(255,255,255,0.65)]">
+              }} className="glass-pill glass-hover hover:text-[#2196E8] transition-all duration-200 text-[rgba(255,255,255,0.65)] px-4 py-2">
                 <LinkedinIcon />
                 <HoverSplitText text="LinkedIn" href="https://linkedin.com/company/brandworks" staggerDelay={0.012} style={{ fontFamily: 'var(--font-dm-sans), sans-serif', fontSize: '14px', color: 'inherit' }} />
               </div>
               <div style={{
                 display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px',
-              }} className="hover:text-[#0DC76A] hover:translate-x-[3px] transition-all duration-200 text-[rgba(255,255,255,0.65)]">
+              }} className="glass-pill glass-hover hover:text-[#0DC76A] transition-all duration-200 text-[rgba(255,255,255,0.65)] px-4 py-2">
                 <WhatsAppIcon />
                 <HoverSplitText text="WhatsApp" href="https://wa.me/96550727586" staggerDelay={0.012} style={{ fontFamily: 'var(--font-dm-sans), sans-serif', fontSize: '14px', color: 'inherit' }} />
               </div>
@@ -393,11 +393,8 @@ export default function Footer() {
             }}>All rights reserved.</span>
           </div>
 
-          <div style={{
-            background: 'rgba(13,198,106,0.08)',
-            border: '1px solid rgba(13,198,106,0.22)',
-            color: 'rgba(13,198,106,0.75)',
-            borderRadius: '999px',
+          <div className="glass-pill" style={{
+            color: 'rgba(13,198,106,0.85)',
             padding: '5px 16px',
             fontFamily: 'var(--font-space-grotesk), sans-serif',
             fontSize: '11px',
@@ -405,7 +402,7 @@ export default function Footer() {
             alignItems: 'center',
             gap: '6px'
           }}>
-            ✓ Licensed & Registered in Kuwait
+            ✓ Licensed &amp; Registered in Kuwait
           </div>
 
           <div style={{

@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
-import GlassCard from '../ui/GlassCard';
 import Logo from '@/components/Logo';
 
 const EASE = [0.25, 0.46, 0.45, 0.94] as const;
@@ -33,7 +32,7 @@ export default function About() {
               Contact us today for more information on how we can help achieve your business goals.
             </p>
             
-            <div className="mt-4 flex items-center gap-3 py-3 px-5 rounded-full bg-white/5 border border-white/10 w-max">
+            <div className="glass-pill mt-4 flex items-center gap-3 py-3 px-5 w-max">
               <span className="text-xl">🇰🇼</span>
               <span className="font-space-grotesk font-medium text-white tracking-wide">
                 Based in Kuwait City, Kuwait
@@ -61,12 +60,12 @@ export default function About() {
             </motion.div>
 
             {/* Overlay Glass Card */}
-            <GlassCard className="relative z-10 p-8 max-w-[280px] sm:max-w-[320px] shadow-2xl ml-12 sm:ml-24 mt-12 sm:mt-24">
+            <div className="glass-panel relative z-10 p-8 max-w-[280px] sm:max-w-[320px] shadow-2xl ml-12 sm:ml-24 mt-12 sm:mt-24">
               <h4 className="font-syne font-bold text-xl text-white mb-4">Our Mission</h4>
               <p className="font-dm-sans text-gray-200 italic leading-relaxed text-sm sm:text-base">
                 &quot;To empower businesses by constructing visually striking, structurally sound, and strategically aligned physical brand experiences.&quot;
               </p>
-            </GlassCard>
+            </div>
 
           </div>
         </motion.div>
