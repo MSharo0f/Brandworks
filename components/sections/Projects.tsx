@@ -45,7 +45,7 @@ const projects = [
     tag: "Installation",
     color: "bg-brand-green",
     size: "md:col-span-1 md:row-span-1",
-    img: "https://images.unsplash.com/photo-1573408301185-9519f94816f7",
+    img: "https://images.unsplash.com/photo-1555529771-835f59fc5efe",
     accent: "#00A693",
   },
   {
@@ -342,7 +342,7 @@ export default function Projects() {
         ))}
       </motion.div>
 
-      <MarqueeCarousel />
+      {/* <MarqueeCarousel /> */}
     </section>
   );
 }

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent, useTransform } from 'framer-motion'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 const InstagramIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
@@ -28,14 +29,15 @@ const WhatsAppIcon = () => (
 import HoverSplitText from '@/components/HoverSplitText'
 
 const navLinks = [
-  { label: 'Home',     href: '#home',     hoverColor: '#F42525' },
-  { label: 'About',    href: '#about',    hoverColor: '#2196E8' },
-  { label: 'Services', href: '#services', hoverColor: '#0DC76A' },
-  { label: 'Projects', href: '#projects', hoverColor: '#FFD700' },
-  { label: 'Contact',  href: '#contact',  hoverColor: '#0D35C4' },
+  { label: 'Home',     href: '/#home',     hoverColor: '#F42525' },
+  { label: 'About',    href: '/#about',    hoverColor: '#2196E8' },
+  { label: 'Services', href: '/#services', hoverColor: '#0DC76A' },
+  { label: 'Projects', href: '/#projects', hoverColor: '#FFD700' },
+  { label: 'Contact',  href: '/#contact',  hoverColor: '#0D35C4' },
 ]
 
 export default function Navbar() {
+  const pathname = usePathname()
   const { scrollY } = useScroll()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isHidden, setIsHidden] = useState(false)
@@ -111,6 +113,8 @@ export default function Navbar() {
 
   // Combined translation Y
   const translateY = (hideForFooter) && !isMobileMenuOpen ? '-100%' : '0%'
+
+  if (pathname === '/terms-and-conditions') return null;
 
   return (
     <>
@@ -206,8 +210,13 @@ export default function Navbar() {
                   letterSpacing: '0.04em',
                   color: activeSection === link.href.slice(1) ? 'white' : 'rgba(255,255,255,0.60)',
                 }}
-                onClick={() => {
-                  document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' })
+                onClick={(e) => {
+                  const targetId = link.href.split('#')[1];
+                  const el = document.getElementById(targetId);
+                  if (el) {
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: 'smooth' })
+                  }
                 }}
               />
             ))}
@@ -365,9 +374,14 @@ export default function Navbar() {
                         letterSpacing: '0.04em',
                         color: 'rgba(255,255,255,0.85)',
                       }}
-                      onClick={() => {
-                        setIsMobileMenuOpen(false)
-                        document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' })
+                      onClick={(e) => {
+                        setIsMobileMenuOpen(false);
+                        const targetId = link.href.split('#')[1];
+                        const el = document.getElementById(targetId);
+                        if (el) {
+                          e.preventDefault();
+                          el.scrollIntoView({ behavior: 'smooth' });
+                        }
                       }}
                     />
                   </motion.div>

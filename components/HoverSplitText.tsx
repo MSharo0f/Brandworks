@@ -14,7 +14,7 @@ interface HoverSplitTextProps {
   staggerDelay?: number
   duration?: number
   ease?: string
-  onClick?: () => void
+  onClick?: (e: React.MouseEvent) => void
 }
 
 export default function HoverSplitText({

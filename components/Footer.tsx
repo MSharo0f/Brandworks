@@ -27,8 +27,11 @@ const WhatsAppIcon = () => (
 import Link from 'next/link'
 import SplitText from '@/components/SplitText'
 import HoverSplitText from '@/components/HoverSplitText'
+import { usePathname } from 'next/navigation'
 
 export default function Footer() {
+  const pathname = usePathname()
+
   return (
     <motion.footer 
       initial={{ opacity: 0 }}
@@ -128,7 +131,7 @@ export default function Footer() {
             <HoverSplitText
               key={item}
               text={item}
-              href={`#${item.toLowerCase()}`}
+              href={`/#${item.toLowerCase()}`}
               staggerDelay={0.015}
               style={{
                 fontFamily: 'var(--font-dm-sans), sans-serif',
@@ -137,9 +140,10 @@ export default function Footer() {
                 color: 'rgba(255,255,255,0.55)',
               }}
               className="hover:text-white transition-colors duration-200"
-              onClick={() => {
+              onClick={(e) => {
                 const el = document.getElementById(item.toLowerCase());
                 if (el) {
+                  e.preventDefault();
                   el.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
@@ -348,7 +352,7 @@ export default function Footer() {
         >
           {[
             { name: 'Privacy Policy', path: '/privacy' },
-            { name: 'Terms & Conditions', path: '/terms' },
+            { name: 'Terms & Conditions', path: '/terms-and-conditions' },
             { name: 'Cookie Policy', path: '/cookies' }
           ].map((item) => (
             <HoverSplitText
@@ -385,7 +389,7 @@ export default function Footer() {
               fontSize: '12px',
               color: 'rgba(255,255,255,0.35)',
               marginBottom: '2px'
-            }}>© 2026 Brandworks Advertising Co.</span>
+            }}>© {new Date().getFullYear()} Brandworks Advertising Co.</span>
             <span style={{
               fontFamily: 'var(--font-dm-sans), sans-serif',
               fontSize: '11px',
